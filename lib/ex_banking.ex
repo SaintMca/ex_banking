@@ -2,7 +2,11 @@ defmodule ExBanking do
  
   @spec create_user(user :: String.t) :: :ok | {:error, :wrong_arguments | :user_already_exists}
   def create_user(name) do
-
+    pid = AgentActions.agent();
+    case Users.create(pid, name) do
+      :error -> {:error, :user_already_exists}
+                    :ok -> :ok
+    end
   end
 
   @spec deposit(user :: String.t, amount :: number, currency :: String.t) :: {:ok, new_balance :: number} | {:error, :wrong_arguments | :user_does_not_exist | :too_many_requests_to_user}
@@ -25,3 +29,14 @@ defmodule ExBanking do
     
   end
 end
+
+defmodule AgentActions do
+  def agent() do
+    case Agent.start_link(fn -> %{} end, name: :users) do
+        {:ok, pid} -> pid
+        {:error, {:already_started, pid}} -> pid
+    end
+  end
+end
+
+

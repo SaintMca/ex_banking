@@ -15,4 +15,22 @@ defmodule Users do
             %User{account: Account.create()}
         )
     end
+
+    def getUser(pid, name) do
+        Agent.get(pid, fn users ->
+            case users[name] do
+                nil -> :error
+                _ -> :ok
+            end
+        end)
+    end
+
+   
+    def getCurrentAgent() do
+        case Agent.start_link(fn -> %{} end, name: :users) do
+            {:ok, pid} -> pid
+            {:error, {:already_started, pid}} -> pid
+        end
+    end
+      
 end

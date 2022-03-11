@@ -1,0 +1,3 @@
+%{
+  "valdi": {:hex, :valdi, "0.2.0", "d4fe8c514951ead16ec92237df7420b557c60327d1195c80ac9d92c0f14efe11", [:mix], [], "hexpm", "038702e83d5516b80eff07574b87b9aa5ccb29368ffc64cc57289bd4fd1497d3"},
+}

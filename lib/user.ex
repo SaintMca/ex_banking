@@ -1,3 +1,3 @@
 defmodule User do
-    defstruct load: 0 , account: :pid
+  defstruct requestCount: 0, account: :pid
 end

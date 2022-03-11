@@ -1,0 +1,4 @@
+%{
+  "decimal": {:hex, :decimal, "1.9.0", "83e8daf59631d632b171faabafb4a9f4242c514b0a06ba3df493951c08f64d07", [:mix], [], "hexpm", "b1f2343568eed6928f3e751cf2dffde95bfaa19dd95d09e8a9ea92ccfd6f7d85"},
+  "valdi": {:hex, :valdi, "0.2.0", "d4fe8c514951ead16ec92237df7420b557c60327d1195c80ac9d92c0f14efe11", [:mix], [], "hexpm", "038702e83d5516b80eff07574b87b9aa5ccb29368ffc64cc57289bd4fd1497d3"},
+}
